@@ -19,6 +19,7 @@ virtualFolder:
         - path: ../driver/IIC.c
         - path: ../driver/lcd.c
         - path: ../driver/lcd_init.c
+        - path: ../driver/esp32_at.c
       folders: []
     - name: hardware
       files: []

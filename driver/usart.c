@@ -153,7 +153,103 @@ void USART1_IRQHandler(void)                	//串口1中断服务程序
 } 
 #endif	
 
- 
+
+/*
+ * USART2 support
+ *
+ * Design notes:
+ * - USART2 is used to talk to the ESP32 (AT firmware). We allocate a
+ *   byte buffer `USART2_RX_BUF` of size `USART_REC_LEN` to store incoming
+ *   bytes as they arrive in the IRQ handler.
+ * - `USART2_RX_STA` lower 14 bits are used as the write index into the
+ *   circular buffer (range 0..USART_REC_LEN-1). The upper two bits are
+ *   reserved for flags if needed in future.
+ * - The IRQ handler appends each received byte into the buffer and
+ *   advances the index. We do NOT perform line/CRLF parsing in the ISR
+ *   to keep the interrupt handler fast; instead the main code detects
+ *   idle periods and processes buffered data (see `ESP_WaitResponse`).
+ * - Because the buffer is circular, long or continuous streams may
+ *   overwrite older data. This is acceptable for short AT replies; for
+ *   full robustness a ring queue with head/tail and overflow handling
+ *   should be implemented.
+ */
+
+// ------------------ USART2 support ------------------
+
+#if EN_USART2_RX
+u8 USART2_RX_BUF[USART_REC_LEN];
+u16 USART2_RX_STA = 0;
+
+void uart2_init(u32 bound){
+	GPIO_InitTypeDef GPIO_InitStructure;
+	USART_InitTypeDef USART_InitStructure;
+	NVIC_InitTypeDef NVIC_InitStructure;
+
+	// Enable clocks for GPIOA (PA2/PA3 used) and USART2 (on APB1)
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE); // PA2/PA3
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE); // USART2 在 APB1
+
+	// 引脚复用 PA2 TX, PA3 RX
+	// Note: If your board uses different pins for USART2, change these
+	// AF mappings accordingly. PA2 -> USART2_TX, PA3 -> USART2_RX is common
+	// on STM32F4 discovery-style boards.
+	GPIO_PinAFConfig(GPIOA, GPIO_PinSource2, GPIO_AF_USART2);
+	GPIO_PinAFConfig(GPIOA, GPIO_PinSource3, GPIO_AF_USART2);
+
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+	// Configure USART2 with given baud and standard 8N1 format
+	USART_InitStructure.USART_BaudRate = bound;
+	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+	USART_InitStructure.USART_StopBits = USART_StopBits_1;
+	USART_InitStructure.USART_Parity = USART_Parity_No;
+	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+	USART_Init(USART2, &USART_InitStructure);
+
+	USART_Cmd(USART2, ENABLE);
+
+#if EN_USART2_RX
+	USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
+
+	// NVIC
+	NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
+#endif
+}
+
+void USART2_IRQHandler(void){
+	u8 Res;
+#if SYSTEM_SUPPORT_OS
+	OSIntEnter();
+#endif
+	if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET){
+		Res = USART_ReceiveData(USART2);
+
+		// Simple append-only buffer for high-speed reception.
+		// Store bytes sequentially; main code will detect packet boundaries (CRLF) or idle.
+		u16 idx = USART2_RX_STA & 0x3FFF;
+		USART2_RX_BUF[idx] = Res;
+		idx++;
+		if(idx >= USART_REC_LEN) idx = 0; // wrap to avoid overflow (circular)
+		// store new length in lower bits; we keep a separate length counter by using STA as index
+		USART2_RX_STA = (USART2_RX_STA & 0xC000) | idx;
+	}
+#if SYSTEM_SUPPORT_OS
+	OSIntExit();
+#endif
+}
+#endif
+
+
 
 
 
