@@ -1,0 +1,26 @@
+# 忽略整个 build 文件夹（EIDE 和 GCC 编译产物）
+**/build/
+
+# 忽略 Keil 产生的中间文件
+mdk/Objects/
+mdk/Listings/
+mdk/DebugConfig/
+
+# 忽略特定的扩展名文件
+*.axf
+*.elf
+*.o
+*.d
+*.crf
+*.htm
+*.dep
+*.lnp
+*.map
+*.lst
+*.log
+
+# 忽略编辑器或系统临时文件
+.vscode/ipch/
+.vscode/.browse.vc.db
+.DS_Store
+Thumbs.db``
