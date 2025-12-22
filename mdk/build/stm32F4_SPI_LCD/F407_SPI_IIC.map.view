@@ -1,6 +1,0 @@
-tool: AC5
-fileName: 'F407_SPI_IIC.map'
-elfName: 'F407_SPI_IIC.axf'
-compilerName: 'ARM Compiler'
-compilerFullName: 'Component: ARM Compiler 5.06 update 6 (build 750)'
-compilerPath: 'D:\keil\core\ARM\ARMCC\bin\armcc.exe'
