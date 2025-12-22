@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug ",    // 在调试下拉菜单中显示的名称
+            "cwd": "${workspaceFolder}",// 当前工作目录设为项目根目录
+            //去项目文件夹，找到那个elf文件，通常名字为 projectname.elf 如果修改项目名字，这里也需要修改，始终保证正确
+            "executable": "${workspaceFolder}/build/stm32F4_SPI_LCD/F407_SPI_IIC.elf", 
+            "request": "launch",      // 请求类型：启动调试（与之相对的是attach挂载）
+            "type": "cortex-debug",   // 告诉VS Code调用Cortex-Debug插件
+            "runToEntryPoint": "main",// 启动后自动运行到 main 函数停下
+            "servertype": "openocd",  // 使用OpenOCD作为调试后端     
+            "armToolchainPath": "D:/gnu-toolchain/bin",    //因为我的工具链是外部的，所以需要给定路径
+            "configFiles": [
+                "interface/stlink.cfg",//如果换别的调试器需要改变量， openocd内部寻址可以不用绝对路径
+                //如果改用DAPLink，这里换成cmsis-dap.cfg，最好别改，因为还要改别的地方
+                "target/stm32f4x.cfg"  //适配 F407，改别的系列只需要改数字，1，2，4，7。。。
+            ],
+            // 建议把 SVD 路径改对，否则你看不到外设寄存器 换芯片的时候，可能得换
+            "svdFile": "${workspaceFolder}/STM32F40x.svd"
+        }
+    ]
+}

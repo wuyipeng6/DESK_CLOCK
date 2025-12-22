@@ -1,0 +1,11 @@
+app 存放用户代码，项目功能代码，main.c一般存放在这里
+
+driver 外设驱动文件，比如led/key/lcd等驱动代码
+
+firmware 芯片固件文件，从官方SDK里面复制出来的工程文件
+    |--cmsis ARM公司强制标准文件，所有ARM内核芯片都遵循CMSIS标准
+    |--driver 芯片外设驱动文件，比如stm32f4xx_gpio.c/.h文件存放在这里
+
+mdk 存放keil工程文件
+
+third_lib 三方组件库，里面存放freertos/lvgl/shell/logger等组件的源码

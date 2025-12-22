@@ -1,0 +1,137 @@
+[2025-12-21 21:52:53]	[info] incremental build: 54 source files changed
+These source files will be recompiled
+---
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\app\main.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\driver\Delay.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\driver\IIC.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\driver\lcd.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\driver\lcd_init.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\driver\usart.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\cmsis\driver\startup_stm32f40_41xxx.s': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\cmsis\driver\stm32f4xx_it.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\cmsis\driver\system_stm32f4xx.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\misc.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_adc.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_can.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_cec.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_crc.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_cryp.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_cryp_aes.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_cryp_des.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_cryp_tdes.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dac.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dbgmcu.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dcmi.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dfsdm.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dma.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dma2d.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dsi.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_exti.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_flash.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_flash_ramfunc.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_fmpi2c.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_fsmc.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_gpio.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_hash.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_hash_md5.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_hash_sha1.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_i2c.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_iwdg.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_lptim.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_ltdc.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_pwr.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_qspi.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_rcc.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_rng.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_rtc.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_sai.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_sdio.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_spdifrx.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_spi.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_syscfg.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_tim.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_usart.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_wwdg.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\third_lib\OLED.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\third_lib\OLED_Data.c': object (.o) file not exist
+'c:\Users\WYP\Desktop\桌面时钟\MY_project\stm32F4_IIC\third_lib\sht20.c': object (.o) file not exist
+
+[2025-12-21 21:52:55]	[done]
+	build successfully !
+
+[2025-12-21 21:54:21]	[done]
+	build successfully !
+
+[2025-12-21 21:55:43]	[done]
+	build successfully !
+
+[2025-12-21 21:56:56]	[done]
+	build successfully !
+
+[2025-12-21 22:00:45]	[info] incremental build: 54 source files changed
+These source files will be recompiled
+---
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\app\main.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\driver\Delay.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\driver\IIC.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\driver\lcd.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\driver\lcd_init.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\driver\usart.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\cmsis\driver\startup_stm32f40_41xxx.s': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\cmsis\driver\stm32f4xx_it.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\cmsis\driver\system_stm32f4xx.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\misc.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_adc.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_can.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_cec.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_crc.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_cryp.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_cryp_aes.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_cryp_des.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_cryp_tdes.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dac.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dbgmcu.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dcmi.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dfsdm.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dma.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dma2d.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_dsi.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_exti.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_flash.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_flash_ramfunc.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_fmpi2c.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_fsmc.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_gpio.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_hash.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_hash_md5.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_hash_sha1.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_i2c.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_iwdg.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_lptim.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_ltdc.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_pwr.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_qspi.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_rcc.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_rng.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_rtc.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_sai.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_sdio.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_spdifrx.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_spi.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_syscfg.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_tim.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_usart.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\hardware\driver\src\stm32f4xx_wwdg.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\third_lib\OLED.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\third_lib\OLED_Data.c': compiler options has been changed.
+'c:\Users\WYP\Desktop\DESK_CLOCK\MY_project\stm32F4_IIC\third_lib\sht20.c': compiler options has been changed.
+
+[2025-12-21 22:00:47]	[done]
+	build successfully !
+
+[2025-12-21 22:08:24]	[done]
+	build successfully !
+
+[2025-12-21 22:10:21]	[done]
+	build successfully !
+
