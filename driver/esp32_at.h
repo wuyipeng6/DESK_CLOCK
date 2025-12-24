@@ -16,5 +16,6 @@ int ESP_Reset(void); // returns 0 on success, -1 on unsupported
 int ESP_SendCmd(const char *cmd, const char *expect, uint32_t timeout_ms);
 int ESP_WaitResponse(const char *expect, char *outbuf, size_t outlen, uint32_t timeout_ms);
 int ESP_SendRaw(const uint8_t *data, size_t len);
+int ESP_ConnectAP(const char *ssid, const char *pwd, uint32_t timeout_ms);
 
 #endif

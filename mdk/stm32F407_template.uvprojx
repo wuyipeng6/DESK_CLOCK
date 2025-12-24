@@ -418,6 +418,11 @@
               <FileType>1</FileType>
               <FilePath>..\driver\lcd_init.c</FilePath>
             </File>
+            <File>
+              <FileName>esp32_at.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\driver\esp32_at.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
