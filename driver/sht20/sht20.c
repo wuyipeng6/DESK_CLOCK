@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 // 声明外部延时函数
-extern void Delay_ms(uint32_t ms);
+extern void delay_ms(uint32_t ms);
 
 /**
   * @brief  初始化 I2C1 (PB6:SCL, PB7:SDA)
@@ -71,7 +71,7 @@ void SHT20_SoftReset(void) {
     if(WaitEvent(I2C1, I2C_EVENT_MASTER_BYTE_TRANSMITTED, "ResetCmd")) return;
 
     I2C_GenerateSTOP(I2C1, ENABLE);
-    Delay_ms(15); // 复位需要时间
+    delay_ms(15); // 复位需要时间
 }
 
 /**
@@ -196,7 +196,7 @@ void SHT20_GetResult(uint8_t cmd, float *result)
 {
     while(!STH20_if_R_ACK())
     {
-        Delay_ms (20);
+        delay_ms (20);
     }
 //    I2C_GenerateSTART (I2C1,ENABLE);
 //    if(WaitEvent(I2C1,I2C_EVENT_MASTER_MODE_SELECT,"RESTART timeout")) return ;

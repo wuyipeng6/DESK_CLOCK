@@ -1,41 +1,53 @@
+#include <stdint.h>
+#include <string.h>
 #include "stm32f4xx.h"
+#include "delay.h"
 
-/**
-  * @brief  微秒级延时
-  * @param  xus 延时时长，范围：0~233015
-  * @retval 无
-  */
-void Delay_us(uint32_t xus)
+#define TICKS_PER_MS    (SystemCoreClock / 1000)
+#define TICKS_PER_US    (SystemCoreClock / 1000000)
+
+static volatile uint64_t cpu_tick_count;
+
+void cpu_tick_init(void)
 {
-	SysTick->LOAD =( SystemCoreClock / 1000 /1000 ) * xus -1 ;				//设置定时器重装值
-	SysTick->VAL = 0x00;					//清空当前计数值
-	SysTick->CTRL = 0x00000005;				//设置时钟源为HCLK，启动定时器
-	while(!(SysTick->CTRL & 0x00010000));	//等待计数到0
-	SysTick->CTRL = 0x00000004;				//关闭定时器
+    SysTick->LOAD = TICKS_PER_MS;
+    SysTick->VAL = 0;
+    SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_TICKINT_Msk | SysTick_CTRL_ENABLE_Msk;
 }
 
-/**
-  * @brief  毫秒级延时
-  * @param  xms 延时时长，范围：0~4294967295
-  * @retval 无
-  */
-void Delay_ms(uint32_t xms)
+uint64_t cpu_now(void)
 {
-	while(xms--)
-	{
-		Delay_us(1000);
-	}
+    uint64_t now, last_count;
+    do {
+        last_count = cpu_tick_count;
+        now = cpu_tick_count + SysTick->LOAD - SysTick->VAL;
+    } while (last_count != cpu_tick_count);
+    return now;
 }
- 
-/**
-  * @brief  秒级延时
-  * @param  xs 延时时长，范围：0~4294967295
-  * @retval 无
-  */
-void Delay_s(uint32_t xs)
+
+uint64_t cpu_get_us(void)
 {
-	while(xs--)
-	{
-		Delay_ms(1000);
-	}
-} 
+    return cpu_now() / TICKS_PER_US;
+}
+
+uint64_t cpu_get_ms(void)
+{
+    return cpu_now() / TICKS_PER_MS;
+}
+
+void delay_us(uint32_t us)
+{
+    uint64_t now = cpu_now();
+    while (cpu_now() - now < (uint64_t)us * TICKS_PER_US);
+}
+
+void delay_ms(uint32_t ms)
+{
+    uint64_t now = cpu_now();
+    while (cpu_now() - now < (uint64_t)ms * TICKS_PER_MS);
+}
+
+void SysTick_Handler(void)
+{
+    cpu_tick_count += TICKS_PER_MS;
+}

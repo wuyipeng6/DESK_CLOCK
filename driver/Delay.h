@@ -1,8 +1,13 @@
-#ifndef __DELAY_H
-#define __DELAY_H
+#ifndef __DELAY_H__
+#define __DELAY_H__
 
-void Delay_us(uint32_t us);
-void Delay_ms(uint32_t ms);
-void Delay_s(uint32_t s);
+#include <stdint.h>
 
-#endif
+void cpu_tick_init(void);
+uint64_t cpu_now(void);
+uint64_t cpu_get_us(void);
+uint64_t cpu_get_ms(void);
+void delay_us(uint32_t us);
+void delay_ms(uint32_t ms);
+
+#endif /* __DELAY_H__ */

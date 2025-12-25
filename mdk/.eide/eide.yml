@@ -14,13 +14,30 @@ virtualFolder:
       folders: []
     - name: driver
       files:
-        - path: ../driver/Delay.c
-        - path: ../driver/usart.c
         - path: ../driver/IIC.c
-        - path: ../driver/lcd.c
-        - path: ../driver/lcd_init.c
-        - path: ../driver/esp32_at.c
-      folders: []
+        - path: ../driver/delay.c
+        - path: ../driver/usart.c
+      folders:
+        - name: esp32_AT
+          files:
+            - path: ../driver/esp32_AT/esp_at.c
+            - path: ../driver/esp32_AT/jsondata.c
+            - path: ../driver/esp32_AT/usart2_dma_at.c
+          folders: []
+        - name: sht20
+          files:
+            - path: ../driver/sht20/sht20.c
+          folders: []
+        - name: lcd
+          files:
+            - path: ../driver/lcd/lcd.c
+            - path: ../driver/lcd/lcd_init.c
+          folders: []
+        - name: oled
+          files:
+            - path: ../driver/oled/OLED.c
+            - path: ../driver/oled/OLED_Data.c
+          folders: []
     - name: hardware
       files: []
       folders:
@@ -79,10 +96,7 @@ virtualFolder:
             - path: ../hardware/driver/src/stm32f4xx_wwdg.c
           folders: []
     - name: third_lib
-      files:
-        - path: ../third_lib/sht20.c
-        - path: ../third_lib/OLED.c
-        - path: ../third_lib/OLED_Data.c
+      files: []
       folders: []
 dependenceList: []
 outDir: build
