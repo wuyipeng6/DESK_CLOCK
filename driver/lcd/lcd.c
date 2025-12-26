@@ -135,7 +135,7 @@ void Draw_Circle(u16 x0,u16 y0,u8 r,u16 color)
                 mode:  0非叠加模式  1叠加模式
       返回值：  无
 ******************************************************************************/
-void LCD_ShowChinese(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
+void LCD_ShowChinese(u16 x,u16 y,char *s,u16 fc,u16 bc,u8 sizey,u8 mode)
 {
 	while(*s!=0)
 	{
@@ -159,7 +159,7 @@ void LCD_ShowChinese(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
                 mode:  0非叠加模式  1叠加模式
       返回值：  无
 ******************************************************************************/
-void LCD_ShowChinese12x12(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
+void LCD_ShowChinese12x12(u16 x,u16 y,char *s,u16 fc,u16 bc,u8 sizey,u8 mode)
 {
 	u8 i,j,m=0;
 	u16 k;
@@ -217,7 +217,7 @@ void LCD_ShowChinese12x12(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
                 mode:  0非叠加模式  1叠加模式
       返回值：  无
 ******************************************************************************/
-void LCD_ShowChinese16x16(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
+void LCD_ShowChinese16x16(u16 x,u16 y,char *s,u16 fc,u16 bc,u8 sizey,u8 mode)
 {
 	u8 i,j,m=0;
 	u16 k;
@@ -275,7 +275,7 @@ void LCD_ShowChinese16x16(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
                 mode:  0非叠加模式  1叠加模式
       返回值：  无
 ******************************************************************************/
-void LCD_ShowChinese24x24(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
+void LCD_ShowChinese24x24(u16 x,u16 y,char *s,u16 fc,u16 bc,u8 sizey,u8 mode)
 {
 	u8 i,j,m=0;
 	u16 k;
@@ -332,7 +332,7 @@ void LCD_ShowChinese24x24(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
                 mode:  0非叠加模式  1叠加模式
       返回值：  无
 ******************************************************************************/
-void LCD_ShowChinese32x32(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
+void LCD_ShowChinese32x32(u16 x,u16 y,char *s,u16 fc,u16 bc,u8 sizey,u8 mode)
 {
 	u8 i,j,m=0;
 	u16 k;
@@ -390,7 +390,7 @@ void LCD_ShowChinese32x32(u16 x,u16 y,u8 *s,u16 fc,u16 bc,u8 sizey,u8 mode)
                 mode:  0非叠加模式  1叠加模式
       返回值：  无
 ******************************************************************************/
-void LCD_ShowChar(u16 x,u16 y,u8 num,u16 fc,u16 bc,u8 sizey,u8 mode)
+void LCD_ShowChar(u16 x,u16 y,char num,u16 fc,u16 bc,u8 sizey,u8 mode)
 {
 	u8 temp,sizex,t,m=0;
 	u16 i,TypefaceNum;//一个字符所占字节大小
@@ -445,7 +445,7 @@ void LCD_ShowChar(u16 x,u16 y,u8 num,u16 fc,u16 bc,u8 sizey,u8 mode)
                 mode:  0非叠加模式  1叠加模式
       返回值：  无
 ******************************************************************************/
-void LCD_ShowString(u16 x,u16 y,const u8 *p,u16 fc,u16 bc,u8 sizey,u8 mode)
+void LCD_ShowString(u16 x,u16 y,const char *p,u16 fc,u16 bc,u8 sizey,u8 mode)
 {         
 	while(*p!='\0')
 	{       

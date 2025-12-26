@@ -12,44 +12,63 @@
 
 
 int main(void) {
-    // 1. ç¡¬ä»¶åŸºç¡€åˆå§‹åŒ–
-    cpu_tick_init();  // åˆå§‹åŒ–ç³»ç»Ÿæ»´ç­”å®šæ—¶å™¨
-    uart_init(115200);    // ä¸²å£åˆå§‹åŒ–
+    // 1. Ó²¼ş»ù´¡³õÊ¼??
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); // ÉèÖÃÖĞ¶ÏÓÅÏÈ¼¶·Ö??
+    cpu_tick_init();  // ³õÊ¼»¯ÏµÍ³µÎ´ğ¶¨Ê±Æ÷
+    uart_init(115200);    // ´®¿Ú³õÊ¼??
 
-    IIC_Init();      //IICå¤–è®¾åˆå§‹åŒ–
-    OLED_Init ();
-    SHT20_SoftReset();
-
-    esp32_at_demo(); //åˆå§‹åŒ–esp32æ¨¡å—ï¼Œè¿æ¥wifi
-
-
-    while (1) {
-        float temp = 0, humi = 0;
-        
-        // --- æ¸©åº¦æµ‹é‡ ---
-        SHT20_Trigger_measurement(CMD_T_MEASURE_NO_HOLD);
-        OLED_ShowString (0,0,"TEMP:",OLED_8X16);
-        
-        //Delay_ms(100); // å…³é”®ï¼šæ¸©åº¦æµ‹é‡æœ€é•¿éœ€è¦ 85msï¼Œè¿™é‡Œç»™ 100ms
-        SHT20_GetResult(CMD_T_MEASURE_NO_HOLD, &temp);
-        OLED_ShowFloatNum (40,0,temp,2,2,OLED_8X16);
+    // IIC_Init();      //IICÍâÉè³õÊ¼??
+    // OLED_Init ();
+    // SHT20_SoftReset();
+    // esp32_at_demo(); //³õÊ¼»¯esp32Ä£¿é£¬Á¬½Ówifi
 
 
-        // --- æ¹¿åº¦æµ‹é‡ ---
-        SHT20_Trigger_measurement(CMD_RH_MEASURE_NO_HOLD);
-        OLED_ShowString (0,16,"HUMI:",OLED_8X16);
-        //Delay_ms(40);  // æ¹¿åº¦æµ‹é‡æœ€é•¿éœ€è¦ 29msï¼Œè¿™é‡Œç»™ 40ms
-        SHT20_GetResult(CMD_RH_MEASURE_NO_HOLD, &humi);
-        OLED_ShowFloatNum (40,16,humi,2,2,OLED_8X16);
-        OLED_Update ();
+	u8 i,j;
+	float t=0;
+	LCD_Init();//LCD³õÊ¼??
+	LCD_Fill(0,0,LCD_W,LCD_H,WHITE);
 
-
-
-        delay_ms(100); 
-    }
+	while(1) 
+	{
+        //LCD_ShowPicture(0,0,240,240,gImage_1);
+		LCD_ShowChinese(0,0,"ÖĞ¾°Ô°µç×Ó",RED,WHITE,32,0);
+		LCD_ShowString(0,40,"LCD_W:",RED,WHITE,16,0);
+		LCD_ShowIntNum(48,40,LCD_W,3,RED,WHITE,16);
+		LCD_ShowString(80,40,"LCD_H:",RED,WHITE,16,0);
+		LCD_ShowIntNum(128,40,LCD_H,3,RED,WHITE,16);
+		LCD_ShowString(80,40,"LCD_H:",RED,WHITE,16,0);
+		LCD_ShowString(0,70,"Increaseing Nun:",RED,WHITE,16,0);
+		LCD_ShowFloatNum1(128,70,t,4,RED,WHITE,16);
+		t+=0.11f;
+		for(j=0;j<3;j++)
+		{
+			for(i=0;i<6;i++)
+			{
+				LCD_ShowPicture(40*i,120+j*40,40,40,gImage_1);
+			}
+		}
+	}
 }
 
 
 
 
 
+        //float temp = 0, humi = 0;
+        
+        // // --- ÎÂ¶È²âÁ¿ ---
+        // SHT20_Trigger_measurement(CMD_T_MEASURE_NO_HOLD);
+        // OLED_ShowString (0,0,"TEMP:",OLED_8X16);
+        
+        // //Delay_ms(100); // ¹Ø¼ü£ºÎÂ¶È²âÁ¿×î³¤Ğè?? 85ms£¬ÕâÀï¸ø 100ms
+        // SHT20_GetResult(CMD_T_MEASURE_NO_HOLD, &temp);
+        // OLED_ShowFloatNum (40,0,temp,2,2,OLED_8X16);
+
+
+        // // --- Êª¶È²âÁ¿ ---
+        // SHT20_Trigger_measurement(CMD_RH_MEASURE_NO_HOLD);
+        // OLED_ShowString (0,16,"HUMI:",OLED_8X16);
+        // //Delay_ms(40);  // Êª¶È²âÁ¿×î³¤Ğè?? 29ms£¬ÕâÀï¸ø 40ms
+        // SHT20_GetResult(CMD_RH_MEASURE_NO_HOLD, &humi);
+        // OLED_ShowFloatNum (40,16,humi,2,2,OLED_8X16);
+        // OLED_Update ();

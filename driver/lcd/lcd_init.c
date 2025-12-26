@@ -156,11 +156,11 @@ void LCD_Init(void)
 	delay_ms(100);
 	
 	LCD_BLK_Set();//´ò¿ª±³¹â
-    delay_ms(100);
+  delay_ms(100);
 	
 	//************* Start Initial Sequence **********//
 	LCD_WR_REG(0x11); //Sleep out 
-	delay_ms(120);              //delay 120ms 
+	delay_ms(120);              //Delay 120ms 
 	//************* Start Initial Sequence **********// 
 	LCD_WR_REG(0x36);
 	if(USE_HORIZONTAL==0)LCD_WR_DATA8(0x00);
