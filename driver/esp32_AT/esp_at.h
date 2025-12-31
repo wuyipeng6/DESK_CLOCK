@@ -39,6 +39,8 @@ void power_on_step2_weather_get(void); //获取天气信息，初始化结构体
 
 //模块功能演示
 void esp32_at_demo(void);
+//ESP32——AT开启初始化函数
+void esp32_at_init(void);
 
 
 

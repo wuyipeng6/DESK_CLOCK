@@ -32,11 +32,17 @@ virtualFolder:
           files:
             - path: ../driver/lcd/lcd.c
             - path: ../driver/lcd/lcd_init.c
+            - path: ../driver/lcd/clock_UI.c
+            - path: ../driver/lcd/pic.c
           folders: []
         - name: oled
           files:
             - path: ../driver/oled/OLED.c
             - path: ../driver/oled/OLED_Data.c
+          folders: []
+        - name: rtc
+          files:
+            - path: ../driver/rtc/rtc.c
           folders: []
     - name: hardware
       files: []

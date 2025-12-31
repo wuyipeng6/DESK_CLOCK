@@ -232,6 +232,7 @@ int Parse_SNTP_TIME_To_Global(const char *raw_buffer) {
         g_sys_time.minute = (uint8_t)mm;
         g_sys_time.second = (uint8_t)ss;
         g_sys_time.is_valid = 1;
+        
         return 1;
     }
     g_sys_time.is_valid = 0;

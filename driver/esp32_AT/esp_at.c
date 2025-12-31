@@ -2,6 +2,7 @@
 #include "delay.h"
 #include "usart2_dma_at.h"
 #include "jsondata.h"
+#include "rtc/rtc.h"
 
 //初始化ESP-AT模块所使用的串口USART2
 void esp_at_usart_init(void)//static函数等于文件的私有函数
@@ -201,6 +202,8 @@ bool esp_at_get_sntp_time(void) {
         printf("[ERROR] SNTP时间解析失败\r\n");
         return false;
     }
+    RTC_SetTimeOnce(g_sys_time.hour, g_sys_time.minute, g_sys_time.second);//每次联网获取时间自动设置RTC时间
+
     return true;
 }
 
@@ -336,5 +339,14 @@ void esp32_at_demo(void)
     esp_at_get_sntp_time();//获取SNTP时间，初始化结构体System_Time_t
     Print_SNTP_Time();//打印SNTP时间信息
 
+}
+
+//ESP32——AT开启初始化函数（开启ESP32-AT模块，连接WiFi，获取IP地址及地理位置，获取天气信息，获取SNTP时间，设置rtc）
+void esp32_at_init(void)
+{
+    esp_at_usart_init();//初始化ESP-AT模块所使用的串口USART2
+    power_on_step1_location_get();//上电联网并获取IP及地理位置，初始化结构体IP_Location_t
+    power_on_step2_weather_get();//获取天气信息，初始化结构体Weather_Forecast_t，
+    esp_at_get_sntp_time();//获取SNTP时间，初始化结构体System_Time_t
 }
 
